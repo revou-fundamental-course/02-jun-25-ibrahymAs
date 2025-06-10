@@ -426,7 +426,6 @@ form#messageForm button:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Gaya untuk setiap entri pesan (jika kamu sudah membuatnya di JS) */
 .message-entry {
   border-bottom: 1px dashed #c0c0c0; /* Garis pemisah antar pesan */
   padding-bottom: 10px;

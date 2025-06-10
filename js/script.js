@@ -13,7 +13,6 @@ document.getElementById("hamburger").addEventListener("click", function () {
   const nav = document.getElementById("nav-links");
   nav.classList.toggle("active");
 
-  // Debugging
   console.log("Menu state:", nav.classList.contains("active"));
   console.log("Computed display:", window.getComputedStyle(nav).display);
 });
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const messageForm = document.getElementById("messageForm");
   const resultBox = document.getElementById("resultBox"); // Ini adalah kontainer untuk semua pesan
 
-  // Hapus elemen p dan span yang ada di HTML dari result-box karena akan dibuat secara dinamis
   resultBox.innerHTML = ""; // Membersihkan konten awal result-box
 
   // Dapatkan elemen span untuk pesan kesalahan
