@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMAN 2 PANGKEP</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <img src="assets/logo.png" alt="SMAN 2 Pangkep" class="logo-img" />
+      </div>
+      <nav id="nav-links" class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#profile">Our Profile</a>
+        <a href="#facilities">Our Facilities</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="hamburger" id="hamburger">&#9776;</div>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <img src="assets/image.png" alt="Background" class="hero-bg" />
+        <div class="hero-content">
+          <h2>Hi <span id="userName">Harfi</span>, Selamat Datang di SMAN 2 Pangkep</h2>
+          <p>Sekolah Unggulan yang Membentuk Generasi Berkarakter dan Berprestasi</p>
+        </div>
+      </section>
+
+      <section id="profile" class="profile">
+        <br /><br />
+        <h3>Tentang SMAN 2 Pangkep</h3>
+        <p>
+          SMAN 2 Pangkep merupakan sekolah unggulan di Kabupaten Pangkajene dan Kepulauan yang telah berdiri sejak tahun 1985. Sebagai sekolah berakreditasi A (Unggul), kami berkomitmen untuk memberikan pendidikan berkualitas tinggi yang
+          mengintegrasikan pengembangan akademik dan pembentukan karakter siswa secara holistik.
+        </p>
+
+        <p>
+          Visi kami adalah "Mewujudkan Generasi Cerdas, Kreatif, dan Berakhlak Mulia yang Berdaya Saing Global". Untuk mencapai visi tersebut, kami memiliki misi: (1) Menyelenggarakan pembelajaran berbasis teknologi dan kearifan lokal, (2)
+          Mengembangkan potensi siswa melalui kurikulum merdeka yang berfokus pada bakat individu, (3) Menciptakan lingkungan belajar yang aman, nyaman, dan inklusif bagi seluruh warga sekolah, serta (4) Membangun kemitraan dengan orang tua
+          dan masyarakat untuk mendukung proses pendidikan.
+        </p>
+
+        <p>
+          SMAN 2 Pangkep memiliki berbagai fasilitas pendukung seperti laboratorium sains modern, perpustakaan digital, ruang kreativitas siswa, dan lapangan olahraga lengkap. Kami juga menawarkan berbagai program unggulan termasuk kelas
+          olimpiade, program literasi digital, ekstrakurikuler berbasis minat, serta pembinaan karakter melalui kegiatan keagamaan dan sosial.
+        </p>
+
+        <p>
+          Dengan tenaga pendidik yang 90% bergelar magister dan berpengalaman, serta didukung oleh manajemen sekolah yang transparan dan akuntabel, kami siap membimbing siswa menjadi lulusan yang kompeten secara akademik dan memiliki
+          integritas moral yang tinggi.
+        </p>
+      </section>
+
+      <section id="facilities" class="facilities">
+        <br />
+        <h3>Our Facilities</h3>
+        <div class="facility-items">
+          <div class="item">
+            <div class="circle">
+              <img src="https://cdn-icons-png.flaticon.com/512/3132/3132693.png" alt="Professional Teacher" />
+            </div>
+            <p>Professional Teacher</p>
+          </div>
+          <div class="item">
+            <div class="circle">
+              <img src="https://cdn-icons-png.flaticon.com/512/5025/5025333.png" alt="Sport Field" />
+            </div>
+            <p>Sport Field</p>
+          </div>
+          <div class="item">
+            <div class="circle">
+              <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png" alt="Classroom" />
+            </div>
+            <p>Classroom</p>
+          </div>
+          <div class="item">
+            <div class="circle">
+              <img src="https://cdn-icons-png.flaticon.com/512/2232/2232688.png" alt="Library" />
+            </div>
+            <p>Library</p>
+          </div>
+          <div class="item">
+            <div class="circle">
+              <img src="https://cdn-icons-png.flaticon.com/512/4392/4392562.png" alt="Computer Lab" />
+            </div>
+            <p>Computer Lab</p>
+          </div>
+          <div class="item">
+            <div class="circle">
+              <img src="https://cdn-icons-png.flaticon.com/512/3194/3194336.png" alt="Science Lab" />
+            </div>
+            <p>Science Lab</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="message-us">
+        <br /><br />
+        <h3>Message Us</h3>
+        <div class="form-container">
+          <form id="messageForm">
+            <label>Nama : <input type="text" id="name" /><span class="error-message" id="nameError"></span></label>
+            <label>Tanggal Lahir : <input type="date" id="birthdate" /><span class="error-message" id="birthdateError"></span></label>
+            <label
+              >Jenis Kelamin :
+              <select id="gender">
+                <option value="Laki - Laki">Laki-Laki</option>
+                <option value="Perempuan">Perempuan</option>
+              </select>
+            </label>
+            <label>Pesan : <textarea id="message"></textarea><span class="error-message" id="messageError"></span></label>
+            <button type="submit">Submit</button>
+          </form>
+          <div class="result-box" id="resultBox">
+            <p><strong>Current time:</strong> <span id="currentTime"></span></p>
+            <p><strong>Nama:</strong> <span id="rName"></span></p>
+            <p><strong>Tanggal Lahir:</strong> <span id="rBirthdate"></span></p>
+            <p><strong>Jenis kelamin:</strong> <span id="rGender"></span></p>
+            <p><strong>Pesan:</strong> <span id="rMessage"></span></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="school-info">
+        <p>SMAN 2 PANGKEP</p>
+        <p>Jl. H. M. Arsyad B No. 7, Pangkajene, Pangkajene dan Kepulauan</p>
+        <p>Telp: (0410) 21042 | Email: info@sman2pangkep.sch.id</p>
+      </div>
+      <div class="credit">
+        <p>© 2023 SMAN 2 PANGKEP | Created by RevoU</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>

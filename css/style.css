@@ -1,0 +1,488 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #334155;
+  padding: 1rem 2rem;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+}
+
+.school-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.school-motto {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #94a3b8;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    /* Positioning */
+    position: fixed;
+    top: 60px; /* Sesuaikan dengan tinggi navbar */
+    left: 0;
+    right: 0;
+
+    /* Style */
+    background-color: #334155;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+
+    /* Animation */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+
+    /* Pastikan di atas elemen lain */
+    z-index: 1000;
+
+    /* Reset properti yang mungkin konflik */
+    display: flex !important;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .nav-links.active {
+    max-height: 500px; /* Nilai cukup besar untuk menampung semua menu */
+    padding: 1rem 0;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .nav-links a {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* HERO */
+.hero {
+  position: relative; /* Tambahkan ini */
+  min-height: 100vh; /* Ganti height ke min-height */
+  width: 100%;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.hero-content {
+  position: absolute; /* Ganti dari relative ke absolute */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 2rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.8), rgba(51, 65, 85, 0.8));
+}
+
+/* Style lainnya tetap sama */
+.hero-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.profile {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.profile h3 {
+  color: #1e293b;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.profile h3::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #334155;
+  margin: 0.5rem auto;
+}
+
+.profile p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+  color: #475569;
+}
+
+.facilities {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.facilities h3 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1e293b;
+  position: relative;
+}
+
+.facilities h3::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #4a90e2;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.facility-items {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.item {
+  flex: 0 1 160px;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 12px;
+  background-color: #f8fafc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.circle {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 15px;
+  background-color: #f0f7ff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
+  transition: all 0.3s ease;
+}
+
+.circle img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  filter: hue-rotate(190deg) brightness(0.9);
+}
+
+.item:hover .circle {
+  background-color: #e1f0ff;
+  transform: scale(1.05);
+}
+
+.item p {
+  font-size: 1.1rem;
+  color: #334155;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .facility-items {
+    gap: 20px;
+  }
+  .item {
+    flex: 0 1 140px;
+    padding: 15px 10px;
+  }
+  .circle {
+    width: 70px;
+    height: 70px;
+  }
+  .circle img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.message-us {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.message-us h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.form-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap; /* supaya di layar kecil bisa stack */
+  justify-content: center;
+}
+
+form#messageForm {
+  flex: 1 1 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+form#messageForm label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+
+form#messageForm input,
+form#messageForm select,
+form#messageForm textarea {
+  margin-top: 6px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+form#messageForm button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#messageForm button:hover {
+  background-color: #357abd;
+}
+
+.result-box {
+  flex: 1 1 300px;
+  background-color: #f4f8fb;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 8px rgba(74, 144, 226, 0.15);
+  font-size: 1rem;
+  color: #222;
+  line-height: 1.5;
+}
+
+.result-box p {
+  margin: 10px 0;
+}
+
+.result-box strong {
+  color: #4a90e2;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #334155;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero {
+    align-items: flex-start;
+    padding-left: 1.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+.result-box {
+  /* Atur tinggi maksimum kotak */
+  max-height: 430px; /* Sesuaikan angka ini sesuai keinginanmu */
+
+  /* Ini yang membuat scroll muncul secara vertikal */
+  overflow-y: auto;
+
+  /* Gaya tambahan agar lebih rapi */
+  border: 1px solid #ddd;
+  padding: 15px;
+  background-color: #eaf1f7; /* Warna latar belakang yang sedikit berbeda */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Gaya untuk setiap entri pesan (jika kamu sudah membuatnya di JS) */
+.message-entry {
+  border-bottom: 1px dashed #c0c0c0; /* Garis pemisah antar pesan */
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.message-entry:last-child {
+  border-bottom: none; /* Hapus garis pemisah pada pesan terakhir */
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.error-message {
+  color: red; /* Warna teks merah */
+  font-size: 0.85em; /* Ukuran font lebih kecil */
+  margin-left: 10px; /* Jarak dari input */
+  display: inline-block; /* Agar bisa berada di samping input */
+}
+
+/* Footer Styles - Minimal Elegant Design */
+footer {
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 2rem auto 0 auto;
+  padding: 2rem 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #6b7280;
+  text-align: center;
+}
+
+.school-info {
+  margin-bottom: 1.5rem;
+}
+
+.school-info p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.credit p {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* Responsive text sizing */
+@media (min-width: 640px) {
+  .school-info p {
+    font-size: 1.125rem;
+  }
+
+  .credit p {
+    font-size: 1rem;
+  }
+}
