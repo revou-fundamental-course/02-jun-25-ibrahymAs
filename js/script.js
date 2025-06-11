@@ -17,6 +17,18 @@ document.getElementById("hamburger").addEventListener("click", function () {
   console.log("Computed display:", window.getComputedStyle(nav).display);
 });
 
+const backgroundImages = ["assets/bg-1.jpeg", "assets/bg-2.jpg", "assets/bg-3.jpg", "assets/bg-4.jpg"];
+let currentIndex = 0;
+const heroBg = document.querySelector(".hero-bg");
+
+function changeBackground() {
+  currentIndex = (currentIndex + 1) % backgroundImages.length;
+  heroBg.src = backgroundImages[currentIndex];
+}
+
+// Ganti background setiap 5 detik (5000 milidetik)
+setInterval(changeBackground, 2000);
+
 document.addEventListener("DOMContentLoaded", function () {
   const messageForm = document.getElementById("messageForm");
   const resultBox = document.getElementById("resultBox"); // Ini adalah kontainer untuk semua pesan
