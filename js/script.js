@@ -1,7 +1,9 @@
+// Menunggu hingga seluruh dokumen termuat, lalu meminta nama pengguna lewat prompt.
+// Jika pengguna tidak memasukkan nama, maka akan ditampilkan "Pengunjung".
+// Nama akan ditampilkan di elemen dengan ID "userName".
 document.addEventListener("DOMContentLoaded", function () {
   let userName = prompt("Selamat datang! Silakan masukkan nama Anda:"); // Langsung meminta nama
 
-  // Periksa apakah pengguna memasukkan nama
   if (!userName) {
     userName = "Pengunjung"; // Jika tidak diisi, gunakan "Pengunjung"
   }
@@ -9,6 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("userName").textContent = userName;
 });
 
+// Menangani klik pada tombol hamburger untuk toggle navigasi.
+// Menambahkan/menghapus class "active" pada elemen dengan ID "nav-links".
+// Juga menampilkan status menu dan nilai CSS display ke console.
 document.getElementById("hamburger").addEventListener("click", function () {
   const nav = document.getElementById("nav-links");
   nav.classList.toggle("active");
@@ -17,6 +22,8 @@ document.getElementById("hamburger").addEventListener("click", function () {
   console.log("Computed display:", window.getComputedStyle(nav).display);
 });
 
+// Daftar gambar background untuk hero section.
+// Fungsi akan mengubah gambar secara berkala setiap 2 detik menggunakan setInterval.
 const backgroundImages = ["assets/bg-1.jpeg", "assets/bg-2.jpg", "assets/bg-3.jpg", "assets/bg-4.jpg"];
 let currentIndex = 0;
 const heroBg = document.querySelector(".hero-bg");
@@ -26,46 +33,47 @@ function changeBackground() {
   heroBg.src = backgroundImages[currentIndex];
 }
 
-// Ganti background setiap 5 detik (5000 milidetik)
-setInterval(changeBackground, 2000);
+setInterval(changeBackground, 2000); // Ubah background setiap 2 detik
 
+// Menunggu DOM termuat lalu menjalankan logika validasi dan penampilan data dari form.
+// Menangani validasi input form, penanganan error, dan penampilan pesan ke dalam resultBox.
 document.addEventListener("DOMContentLoaded", function () {
   const messageForm = document.getElementById("messageForm");
-  const resultBox = document.getElementById("resultBox"); // Ini adalah kontainer untuk semua pesan
+  const resultBox = document.getElementById("resultBox"); // Kontainer untuk semua pesan
 
-  resultBox.innerHTML = ""; // Membersihkan konten awal result-box
+  resultBox.innerHTML = ""; // Membersihkan isi awal resultBox
 
-  // Dapatkan elemen span untuk pesan kesalahan
+  // Elemen untuk menampilkan pesan kesalahan masing-masing input
   const nameError = document.getElementById("nameError");
   const birthdateError = document.getElementById("birthdateError");
   const messageError = document.getElementById("messageError");
 
-  // Fungsi untuk menampilkan pesan kesalahan
+  // Fungsi untuk menampilkan pesan kesalahan pada elemen tertentu
   function showError(element, message) {
     element.textContent = message;
   }
 
-  // Fungsi untuk menghapus pesan kesalahan
+  // Menghapus semua pesan kesalahan sebelum validasi baru
   function clearErrors() {
     nameError.textContent = "";
     birthdateError.textContent = "";
     messageError.textContent = "";
   }
 
+  // Menangani submit form
   messageForm.addEventListener("submit", function (event) {
-    event.preventDefault(); // Mencegah form submit default
+    event.preventDefault(); // Mencegah reload halaman
 
-    // Bersihkan pesan kesalahan sebelumnya setiap kali form disubmit
-    clearErrors();
+    clearErrors(); // Hapus error lama sebelum validasi baru
 
     const name = document.getElementById("name").value.trim();
     const birthdate = document.getElementById("birthdate").value;
-    const gender = document.getElementById("gender").value; // Gender tidak memerlukan validasi kosong karena sudah ada default
+    const gender = document.getElementById("gender").value; // Gender tidak perlu validasi karena ada default
     const message = document.getElementById("message").value.trim();
 
-    let hasError = false; // Flag untuk mengecek apakah ada kesalahan
+    let hasError = false; // Penanda jika ada error
 
-    // Validasi input dan tampilkan pesan kesalahan
+    // Validasi form input
     if (name === "") {
       showError(nameError, "Nama harus diisi!");
       hasError = true;
@@ -79,20 +87,20 @@ document.addEventListener("DOMContentLoaded", function () {
       hasError = true;
     }
 
-    // Jika ada kesalahan, hentikan proses selanjutnya
+    // Jika ada error, hentikan proses
     if (hasError) {
       return;
     }
 
-    // Jika tidak ada kesalahan, lanjutkan proses menampilkan pesan
+    // Jika valid, ambil waktu saat ini
     const now = new Date();
     const currentTime = now.toLocaleTimeString();
 
-    // Buat elemen div baru untuk setiap pesan
+    // Buat elemen div baru untuk menyimpan hasil input
     const messageEntry = document.createElement("div");
-    messageEntry.classList.add("message-entry"); // Tambahkan kelas untuk styling (opsional)
+    messageEntry.classList.add("message-entry"); // Class opsional untuk styling
 
-    // Isi div dengan detail pesan
+    // Isi div dengan data dari form
     messageEntry.innerHTML = `
       <p><strong>Waktu saat ini:</strong> <span>${currentTime}</span></p>
       <p><strong>Nama:</strong> <span>${name}</span></p>
@@ -102,10 +110,10 @@ document.addEventListener("DOMContentLoaded", function () {
       <hr>
     `;
 
-    // Tambahkan pesan baru ke bagian atas resultBox
+    // Tambahkan elemen hasil ke bagian atas resultBox
     resultBox.prepend(messageEntry);
 
-    // Reset formulir setelah submit berhasil
+    // Reset form setelah submit sukses
     messageForm.reset();
   });
 });

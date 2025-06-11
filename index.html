@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <!-- header -->
+    <!-- ===== HEADER ===== -->
+    <!-- Bagian header ini berisi logo sekolah, navigasi menu, dan hamburger menu untuk tampilan mobile -->
     <header class="navbar">
       <div class="logo">
         <img src="assets/logo.png" alt="SMAN 2 Pangkep" class="logo-img" />
@@ -21,7 +22,11 @@
       <div class="hamburger" id="hamburger">&#9776;</div>
     </header>
 
+    <!-- ===== MAIN CONTENT ===== -->
+    <!-- Elemen utama yang membungkus semua konten utama halaman -->
     <main>
+      <!-- ===== SECTION: HOME / HERO ===== -->
+      <!-- Bagian sambutan awal dengan teks sapaan dan latar belakang -->
       <section id="home" class="hero">
         <img src="" alt="Background" class="hero-bg" />
         <div class="hero-content">
@@ -30,32 +35,19 @@
         </div>
       </section>
 
-      <!-- bagian profile -->
+      <!-- ===== SECTION: PROFILE ===== -->
+      <!-- Menampilkan informasi profil lengkap sekolah seperti visi, misi, sejarah, dan tenaga pengajar -->
       <section id="profile" class="profile">
         <br /><br />
         <h3>Our Profile</h3>
-        <p>
-          SMAN 2 Pangkep merupakan sekolah unggulan di Kabupaten Pangkajene dan Kepulauan yang telah berdiri sejak tahun 1985. Sebagai sekolah berakreditasi A (Unggul), kami berkomitmen untuk memberikan pendidikan berkualitas tinggi yang
-          mengintegrasikan pengembangan akademik dan pembentukan karakter siswa secara holistik.
-        </p>
-
-        <p>
-          Visi kami adalah "Mewujudkan Generasi Cerdas, Kreatif, dan Berakhlak Mulia yang Berdaya Saing Global". Untuk mencapai visi tersebut, kami memiliki misi: (1) Menyelenggarakan pembelajaran berbasis teknologi dan kearifan lokal, (2)
-          Mengembangkan potensi siswa melalui kurikulum merdeka yang berfokus pada bakat individu, (3) Menciptakan lingkungan belajar yang aman, nyaman, dan inklusif bagi seluruh warga sekolah, serta (4) Membangun kemitraan dengan orang tua
-          dan masyarakat untuk mendukung proses pendidikan.
-        </p>
-
-        <p>
-          SMAN 2 Pangkep memiliki berbagai fasilitas pendukung seperti laboratorium sains modern, perpustakaan digital, ruang kreativitas siswa, dan lapangan olahraga lengkap. Kami juga menawarkan berbagai program unggulan termasuk kelas
-          olimpiade, program literasi digital, ekstrakurikuler berbasis minat, serta pembinaan karakter melalui kegiatan keagamaan dan sosial.
-        </p>
-
-        <p>
-          Dengan tenaga pendidik yang 90% bergelar magister dan berpengalaman, serta didukung oleh manajemen sekolah yang transparan dan akuntabel, kami siap membimbing siswa menjadi lulusan yang kompeten secara akademik dan memiliki
-          integritas moral yang tinggi.
-        </p>
+        <p>SMAN 2 Pangkep merupakan sekolah unggulan di Kabupaten Pangkajene dan Kepulauan yang telah berdiri sejak tahun 1985. ...</p>
+        <p>Visi kami adalah "Mewujudkan Generasi Cerdas, Kreatif, dan Berakhlak Mulia ...</p>
+        <p>SMAN 2 Pangkep memiliki berbagai fasilitas pendukung seperti laboratorium ...</p>
+        <p>Dengan tenaga pendidik yang 90% bergelar magister ...</p>
       </section>
 
+      <!-- ===== SECTION: FACILITIES ===== -->
+      <!-- Menampilkan daftar fasilitas utama sekolah dalam bentuk ikon dan teks -->
       <section id="facilities" class="facilities">
         <br />
         <h3>Our Facilities</h3>
@@ -99,6 +91,9 @@
         </div>
       </section>
 
+      <!-- ===== SECTION: CONTACT / MESSAGE US ===== -->
+      <!-- Form untuk mengirimkan pesan yang berisi nama, tanggal lahir, jenis kelamin, dan pesan -->
+      <!-- Juga terdapat kotak hasil untuk menampilkan input pengguna -->
       <section id="contact" class="message-us">
         <br /><br />
         <h3>Message Us</h3>
@@ -106,8 +101,8 @@
           <form id="messageForm">
             <label>Nama : <input type="text" id="name" /><span class="error-message" id="nameError"></span></label>
             <label>Tanggal Lahir : <input type="date" id="birthdate" /><span class="error-message" id="birthdateError"></span></label>
-            <label
-              >Jenis Kelamin :
+            <label>
+              Jenis Kelamin :
               <select id="gender">
                 <option value="Laki - Laki">Laki-Laki</option>
                 <option value="Perempuan">Perempuan</option>
@@ -127,6 +122,8 @@
       </section>
     </main>
 
+    <!-- ===== FOOTER ===== -->
+    <!-- Bagian footer yang berisi informasi kontak dan credit pembuat -->
     <footer>
       <div class="school-info">
         <p>SMAN 2 PANGKEP</p>
@@ -137,6 +134,9 @@
         <p>© 2023 SMAN 2 PANGKEP | Created by RevoU</p>
       </div>
     </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <!-- File JavaScript eksternal untuk menangani interaktivitas seperti form dan hamburger menu -->
     <script src="js/script.js"></script>
   </body>
 </html>
